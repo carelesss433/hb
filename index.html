@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Birthday Bash - Dogs Edition</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <div class="logo">🎉 Birthday Bash</div>
+        <nav>
+          <a href="#home">Home</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#music">Music</a>
+          <a href="#game">Game</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+  <div style="color: black;" class="hero-content container">
+
+    <h1>Happy Birthday! 🎂</h1>
+
+    <p class="type-line" data-text="Today is not just another date on the calendar — it’s the day someone truly special came into this world."></p>
+
+    <p class="type-line" data-text="You make ordinary moments feel meaningful, and your presence turns simple days into beautiful memories."></p>
+
+    <p class="type-line" data-text="I hope this year brings you real happiness, peace, growth, and success you genuinely deserve."></p>
+
+    <p class="type-line" data-text="Thank you for the laughter, the comfort, and the countless moments that became memories."></p>
+
+    <p class="type-line" data-text="Keep shining, keep growing, and never forget — you matter more than you realize. Happy Birthday ❤️"></p>
+
+    <a class="cta" href="#gallery">Start the Celebration</a>
+
+  </div>
+</section>
+<br>
+      <section id="gallery" class="section">
+  <div class="container">
+    <h2 style="text-align:center;">Our Memories</h2>
+    <div class="memory-tabs">
+    <a href="#" class="tab active">Images</a>
+    <a href="videos.html" class="tab">Videos</a>
+</div>
+    <div class="heart-container">
+      <svg viewBox="0 0 600 630" class="heart-svg">
+        <defs>
+          <clipPath id="heartClip">
+            <path d="M300 520 
+                     L120 300 
+                     A120 120 0 1 1 300 160 
+                     A120 120 0 1 1 480 300 
+                     Z" />
+          </clipPath>
+        </defs>
+
+        <foreignObject width="600" height="600" clip-path="url(#heartClip)">
+          <div class="heart-grid">
+  <!-- <img src="v2.jpeg">
+  <img src="v6.jpeg">
+  <img src="v1.jpeg">
+  <img src="v7.jpeg">
+  <img src="v4.jpeg">
+  <img src="v8.jpeg">
+  <img src="v3.jpg">
+  <img src="v4.jpeg">
+  <img src="robin.jpg"> -->
+    <img src="https://lh3.googleusercontent.com/d/1WeXiz-Bdm7dqfzwAE3WttZtOTBr44J5C=w1000" class="memory">
+<img src="https://lh3.googleusercontent.com/d/1WeXiz-Bdm7dqfzwAE3WttZtOTBr44J5C=w1000" class="memory">
+<img src="https://lh3.googleusercontent.com/d/1WeXiz-Bdm7dqfzwAE3WttZtOTBr44J5C=w1000" class="memory">
+<img src="https://lh3.googleusercontent.com/d/1WeXiz-Bdm7dqfzwAE3WttZtOTBr44J5C=w1000" class="memory">
+<img src="https://lh3.googleusercontent.com/d/1WeXiz-Bdm7dqfzwAE3WttZtOTBr44J5C=w1000" class="memory">
+<img src="https://lh3.googleusercontent.com/d/1WeXiz-Bdm7dqfzwAE3WttZtOTBr44J5C=w1000" class="memory">
+<img src="https://lh3.googleusercontent.com/d/1WeXiz-Bdm7dqfzwAE3WttZtOTBr44J5C=w1000" class="memory">
+<img src="https://lh3.googleusercontent.com/d/1WeXiz-Bdm7dqfzwAE3WttZtOTBr44J5C=w1000" class="memory">
+<img src="https://lh3.googleusercontent.com/d/1WeXiz-Bdm7dqfzwAE3WttZtOTBr44J5C=w1000" class="memory">
+ 
+</div>
+        </foreignObject>
+      </svg>
+    </div>
+  </div>
+</section>
+
+    <section id="music" class="section">
+  <div class="container">
+    <h2 style="text-align:center;">Birthday Playlist 🎵</h2>
+
+    <div class="playlist-card">
+<audio id="audio" preload="metadata"></audio>
+      <div class="playlist-top">
+        <div class="record">◉</div>
+
+        <div class="track-info">
+          <div id="trackTitle" class="track-title">
+            Currently Playing: —
+          </div>
+          <div class="time-row">
+            <span id="currentTime">0:00</span>
+            <span>/</span>
+            <span id="duration">0:00</span>
+          </div>
+        </div>
+
+        <div class="controls-inline">
+          <button id="prevBtn">⏮</button>
+          <button id="playPause">▶</button>
+          <button id="nextBtn">⏭</button>
+        </div>
+      </div>
+
+      <div id="progressBar" class="progress-bar">
+        <div id="progressFill" class="progress-fill"></div>
+      </div>
+
+      <!-- Songs will be inserted by JS -->
+      <ul id="playlist" class="playlist"></ul>
+
+      <audio id="audio"></audio>
+
+    </div>
+  </div>
+</section>
+
+      <section id="game" class="section">
+        <div class="container">
+          <h2>Game - Sliding Puzzle</h2>
+          <div class="game-grid">
+            <div class="game-left">
+              <p id="gameDesc">Click tiles to move the blank. Image is loaded from cat.jpg or online fallback.</p>
+              <div class="controls-top">
+                <div class="moves-box">Moves: <span id="moves">0</span></div>
+              </div>
+
+              <div id="puzzle" class="puzzle-wrapper"></div>
+
+              <div class="controls">
+                <button id="newGameBtn">New Game</button>
+                <button id="showSolutionBtn">Show Solution</button>
+              </div>
+<!-- 
+              <div class="newgame-wrap">
+                
+              </div> -->
+            </div>
+
+            <aside class="solution-preview">
+              <h3>Solution Preview</h3>
+              <div class="preview-box"><img id="solutionImg" src="cat.jpg" alt="solution preview"></div>
+            </aside>
+          </div>
+          <div style="text-align:center; margin:40px 0;">
+    <a href="flower.html" style="
+        display:inline-block;
+        padding:14px 30px;
+        background:#ff4d6d;
+        color:#fff;
+        text-decoration:none;
+        font-size:18px;
+        font-weight:600;
+        border-radius:30px;
+        transition:0.3s ease;
+    ">
+        Glow like a flower!
+    </a>
+</div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">© 2026 Birthday Bash — Dogs Edition</div>
+    </footer>
+
+    <!-- Congratulations modal (shown when a puzzle is solved) -->
+    <div id="congratsModal" class="modal" aria-hidden="true">
+      <div class="modal-card">
+        <div class="modal-emoji">🎉</div>
+        <h2 id="congratsTitle">Congratulations!</h2>
+        <p id="congratsMsg">You solved the puzzle!</p>
+        <div id="congratsTime" class="congrats-time">Time: 0:00</div>
+        <!-- central play button (plays celebration music / current track) -->
+        <button id="congratsPlay" class="congrats-play" aria-label="Play celebration">▶</button>
+        <div class="modal-actions">
+          <button id="replayBtn">Play Again</button>
+          <button id="closeModalBtn">Close</button>
+        </div>
+      </div>
+    </div>
+    <script>
+
+const lines = document.querySelectorAll(".type-line");
+let currentLine = 0;
+
+function typeWriter(){
+
+    if(currentLine >= lines.length) return;
+
+    const element = lines[currentLine];
+    const text = element.dataset.text;
+    let i = 0;
+
+    function typeChar(){
+        if(i < text.length){
+            element.textContent += text.charAt(i);
+            i++;
+            setTimeout(typeChar, 28);  // typing speed
+        }else{
+            currentLine++;
+            setTimeout(typeWriter, 600);
+        }
+    }
+
+    typeChar();
+}
+
+/* start typing after page loads */
+window.addEventListener("load", typeWriter);
+
+</script>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+
