@@ -789,3 +789,86 @@ button{
 }
 
 
+#home{
+  position:relative;
+  overflow:hidden;
+}
+/* ================= CELEBRATION EFFECT ================= */
+
+/* ----- PARTY CANNONS ----- */
+
+.party-cannons{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index:6;
+}
+
+.cannon{
+  position:absolute;
+  font-size:44px;
+  bottom:40px;
+  opacity:.95;
+  animation:popShake .7s ease infinite alternate;
+}
+
+.left{ left:18px; transform:rotate(-25deg); }
+.right{ right:18px; transform:rotate(25deg); }
+
+@keyframes popShake{
+  from{ transform:translateY(0) rotate(-25deg); }
+  to{ transform:translateY(-7px) rotate(-25deg); }
+}
+
+/* confetti pieces */
+
+.piece{
+  position:absolute;
+  width:10px;
+  height:14px;
+  border-radius:2px;
+  pointer-events:none;
+}
+
+@keyframes shootRight{
+  0%{ transform:translate(0,0) rotate(0); opacity:1; }
+  100%{ transform:translate(110vw,-90vh) rotate(720deg); opacity:0; }
+}
+
+@keyframes shootLeft{
+  0%{ transform:translate(0,0) rotate(0); opacity:1; }
+  100%{ transform:translate(-110vw,-90vh) rotate(-720deg); opacity:0; }
+}
+
+/* ===== SPARK RAIN (TOP → DOWN) ===== */
+
+.spark{
+  position:absolute;
+  width:4px;
+  height:14px;
+  border-radius:2px;
+  top:-20px;
+  opacity:0.95;
+  pointer-events:none;
+
+  background:linear-gradient(to bottom, #fff, #ffd166, #ff9f1c);
+  box-shadow:
+    0 0 6px #fff,
+    0 0 12px #ffd166,
+    0 0 18px #ff9f1c;
+
+  animation: sparkFall linear forwards;
+}
+
+/* falling physics */
+@keyframes sparkFall{
+  0%{
+    transform:translateY(-20px) scale(.8);
+    opacity:1;
+  }
+  100%{
+    transform:translateY(110vh) scale(.2);
+    opacity:0;
+  }
+}
+
