@@ -22,6 +22,58 @@ body{
   padding:24px;
 }
 
+
+.birthday-title{
+  display:inline-block;
+
+  animation:
+    birthdayJump 1.2s ease-in-out infinite,
+    birthdayGlow 2.2s ease-in-out infinite;
+}
+
+/* soft double bounce */
+@keyframes birthdayJump{
+  0%{
+    transform:translateY(0);
+  }
+
+  20%{
+    transform:translateY(-10px);
+  }
+
+  40%{
+    transform:translateY(0);
+  }
+
+  60%{
+    transform:translateY(-5px);
+  }
+
+  80%{
+    transform:translateY(0);
+  }
+
+  100%{
+    transform:translateY(0);
+  }
+}
+
+/* glowing color shift */
+@keyframes birthdayGlow{
+  0%,100%{
+    text-shadow:
+      0 0 6px #fff,
+      0 0 14px #ff7aa2,
+      0 0 24px #ff4d6d;
+  }
+
+  50%{
+    text-shadow:
+      0 0 10px #fff,
+      0 0 20px #ffd166,
+      0 0 32px #ff9f1c;
+  }
+}
 /* Fade-in animation for sections */
 @keyframes fadeIn{
   from{opacity:0;transform:translateY(20px)}
@@ -871,4 +923,5 @@ button{
     opacity:0;
   }
 }
+
 
