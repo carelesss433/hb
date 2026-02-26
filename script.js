@@ -452,4 +452,105 @@ congratsPlayBtn.addEventListener("click", () => {
 });
 
 
+const hero = document.getElementById("home");
+const song = document.getElementById("birthdaySong");
+
+/* create confetti piece */
+function firePiece(fromLeft=true){
+  const piece=document.createElement("div");
+  piece.className="piece";
+
+  piece.style.background=`hsl(${Math.random()*360},85%,60%)`;
+  piece.style.bottom="60px";
+
+  if(fromLeft){
+    piece.style.left="40px";
+    piece.style.animation=`shootRight ${1.6+Math.random()}s linear forwards`;
+  }else{
+    piece.style.right="40px";
+    piece.style.animation=`shootLeft ${1.6+Math.random()}s linear forwards`;
+  }
+
+  hero.appendChild(piece);
+  setTimeout(()=>piece.remove(),2500);
+}
+
+/* cannon burst */
+function fireCannons(){
+  let interval=setInterval(()=>{
+    for(let i=0;i<7;i++){
+      firePiece(true);
+      firePiece(false);
+    }
+  },250);
+
+  /* stop confetti after 12 sec */
+  setTimeout(()=>clearInterval(interval),5000);
+}
+
+/* launch on page open */
+window.addEventListener("load", fireCannons);
+
+
+/* play birthday song on first click */
+let played=false;
+
+document.addEventListener("click", async ()=>{
+  if(played) return;
+  played=true;
+
+  try{
+    await song.play();
+
+    setTimeout(()=>{
+      song.pause();
+      song.currentTime=0;
+    },10000);
+
+  }catch(e){
+    console.log("Audio blocked by browser");
+  }
+});
+
+
+/* ===== SPARK SHOWER FROM TOP ===== */
+
+function launchSparks(){
+
+  const duration = 12000; // 12 seconds
+  const start = Date.now();
+
+  const interval = setInterval(()=>{
+
+    // create multiple sparks each cycle
+    for(let i=0;i<12;i++){
+      const s = document.createElement("div");
+      s.className="spark";
+
+      /* random horizontal position across screen */
+      s.style.left=Math.random()*100+"%";
+
+      /* random speed */
+      const fallTime = 1.5 + Math.random()*1.5;
+      s.style.animationDuration = fallTime+"s";
+
+      /* random delay for natural effect */
+      s.style.animationDelay = Math.random()*0.3+"s";
+
+      document.getElementById("home").appendChild(s);
+
+      setTimeout(()=>s.remove(),3000);
+    }
+
+    /* stop after duration */
+    if(Date.now()-start>duration){
+      clearInterval(interval);
+    }
+
+  },180);
+}
+
+/* start with page load */
+window.addEventListener("load", launchSparks);
+
 
