@@ -9,6 +9,7 @@
 html{scroll-behavior:smooth}
 
 body{
+    background-image:url('bg1.jpeg');
   font-family:Inter,Segoe UI,Arial,sans-serif;
   margin:0;
   color:var(--dark);
@@ -115,7 +116,7 @@ nav a{
 /* HERO */
 
 .hero{
-  background-image:url('bg1.jpg');
+  background-image:url('bg1.jpeg');
   background-size:cover;
   background-position:center;
   min-height:100vh;
@@ -908,6 +909,7 @@ button{
     opacity:0;
   }
 }
+
 
 
 
