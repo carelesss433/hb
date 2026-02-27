@@ -9,12 +9,13 @@
 html{scroll-behavior:smooth}
 
 body{
-    background-image:url('bg1.jpeg');
   font-family:Inter,Segoe UI,Arial,sans-serif;
   margin:0;
   color:var(--dark);
   min-height:100vh;
   background:linear-gradient(135deg,#ffd1e8 0%, #ffe6f3 30%, #f7f0ff 60%, #f0fbff 100%);
+      background-image:url('bg1.jpeg');
+
 }
 
 .container{
@@ -909,6 +910,7 @@ button{
     opacity:0;
   }
 }
+
 
 
 
