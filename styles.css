@@ -14,7 +14,7 @@ body{
   color:var(--dark);
   min-height:100vh;
   background:linear-gradient(135deg,#ffd1e8 0%, #ffe6f3 30%, #f7f0ff 60%, #f0fbff 100%);
-      background-image:url('bg1.jpeg');
+
 
 }
 
@@ -145,7 +145,7 @@ nav a{
 }
 
 /* SECTION */
-.section{      background-image:url('bg1.jpeg');
+.section{     
 
   min-height:100vh;
   display:flex;
@@ -911,6 +911,7 @@ button{
     opacity:0;
   }
 }
+
 
 
 
