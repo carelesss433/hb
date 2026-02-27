@@ -145,7 +145,8 @@ nav a{
 }
 
 /* SECTION */
-.section{
+.section{      background-image:url('bg1.jpeg');
+
   min-height:100vh;
   display:flex;
   align-items:center;
@@ -910,6 +911,7 @@ button{
     opacity:0;
   }
 }
+
 
 
 
