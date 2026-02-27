@@ -177,68 +177,67 @@ nav a{
 /* HEART CONTAINER */
 /* ================= HEART GALLERY FINAL ================= */
 
-/* container */
 .heart-container{
+  /* make heart larger and responsive */
   width:min(98vw,98vh);
   height:min(98vw,98vh);
-  margin:0 auto;
+  margin:0 auto 0;
 }
 
 .heart-svg{
   width:100%;
   height:100%;
   display:block;
-  filter:drop-shadow(0 20px 35px rgba(0,0,0,.25));
 }
 
-/* important for proper clipping */
-foreignObject{
-  overflow:hidden;
-}
-
-/* grid perfectly fills SVG area */
+/* grid that is clipped by heart */
 .heart-grid{
-  position:absolute;
-  inset:0;
-
-  width:100%;
-  height:100%;
+  width:600px;
+  height:600px;
 
   display:grid;
   grid-template-columns:repeat(3,1fr);
   grid-template-rows:repeat(3,1fr);
 
-  gap:0; /* no gaps between images */
+  gap:0;
+  padding:40px 70px 110px 70px;
+  background:#ff4d6d;
+
+  /* IMPORTANT: move images downward inside heart */
+  transform:translateY(5px);
 }
 
-/* images slightly oversized to avoid curved-edge gaps */
 .heart-grid img{
-  width:120%;
-  height:120%;
+  width:100%;
+  height:100%;
   object-fit:cover;
-
-  transform:translate(-10%,-10%);
-  transform-origin:center center;
-
-  border-radius:10px;
-
+  display:block;
+  border-radius:0;
+  box-shadow:none;
+  margin:0;
+  padding:0;
+  
   transition:
     transform .45s cubic-bezier(.2,.8,.2,1),
     filter .35s,
     box-shadow .45s;
-
-  z-index:1;
-  position:relative;
+  box-sizing:border-box;
+}
+/* move ONLY first row slightly left */
+.heart-grid img:nth-child(-n+3){
+  width:105%;
+  transform:translateX(-2%);
 }
 
-/* dim others */
+
+/* dim non-hovered images */
 .heart-grid:hover img{
   filter:brightness(.6) blur(1px);
 }
 
-/* pop-up effect */
+/* popup zoom */
 .heart-grid img:hover{
-  transform:translate(-10%,-18%) scale(1.45);
+  transform:scale(1.45) translateY(-10px);
   z-index:20;
 
   filter:brightness(1) blur(0);
@@ -249,6 +248,7 @@ foreignObject{
 }
 /* reduce space below the gallery heading specifically */
 #gallery .container > h2{margin-bottom:0}
+
 
 
 /* ================= MUSIC PLAYER ================= */
@@ -923,6 +923,7 @@ button{
     opacity:0;
   }
 }
+
 
 
 
