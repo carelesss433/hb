@@ -876,23 +876,6 @@ button{
 
 /* confetti pieces */
 
-.piece{
-  position:absolute;
-  width:10px;
-  height:14px;
-  border-radius:2px;
-  pointer-events:none;
-}
-
-@keyframes shootRight{
-  0%{ transform:translate(0,0) rotate(0); opacity:1; }
-  100%{ transform:translate(110vw,-90vh) rotate(720deg); opacity:0; }
-}
-
-@keyframes shootLeft{
-  0%{ transform:translate(0,0) rotate(0); opacity:1; }
-  100%{ transform:translate(-110vw,-90vh) rotate(-720deg); opacity:0; }
-}
 
 /* ===== SPARK RAIN (TOP → DOWN) ===== */
 
@@ -925,6 +908,7 @@ button{
     opacity:0;
   }
 }
+
 
 
 
